@@ -4,11 +4,11 @@ import "./WelcomeAnim.css";
 export default function WelcomeAnim() {
   return (
     <div className="container">
-      <h1 className="enter">enter</h1>
-      {/* <div className="line"></div> */}
+    <div className="line"></div>
+      <div className="eye"></div>
       <div className="circle"></div>
-
-      <h1 className="enter-mirror">enter</h1>
+      <p className="enter">enter</p>
+      <p className="enter-mirror">enter</p>
     </div>
   );
 }
