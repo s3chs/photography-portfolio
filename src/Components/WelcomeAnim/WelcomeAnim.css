@@ -45,7 +45,7 @@
   background-color: black;
 } */
 
-.eye {
+/* .eye {
   clip-path: ellipse(8% 7% at 50% 50%);
   position: absolute;
   top: 50%;
@@ -54,7 +54,7 @@
   height: 100vh;
   width: 100vw;
   background-color: white;
-}
+} */
 
 .circle {
   cursor: pointer;
