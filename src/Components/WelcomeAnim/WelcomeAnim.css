@@ -131,8 +131,8 @@
 }
 
 .eye:hover ~ .circle::after {
-  width: 25px;
-  height: 25px;
+  width: 28px;
+  height: 28px;
 }
 
 .eye:hover ~ .enter {
@@ -147,8 +147,8 @@
 }
 
 .circle:hover::after {
-  width: 25px;
-  height: 25px;
+  width: 28px;
+  height: 28px;
 }
 
 .circle:hover ~ .enter {

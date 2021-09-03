@@ -1,13 +1,21 @@
 import React from "react";
 import "./WelcomeAnim.css";
 import { useRef } from "react";
+import { useHistory } from "react-router";
 
 export default function WelcomeAnim() {
+  let history = useHistory();
+
   const bgEl = useRef(null);
   const eyeEl = useRef(null);
   const circleEl = useRef(null);
   const enterEl = useRef(null);
   const enterMirrorEl = useRef(null);
+
+  const redirectHome = () => {
+    let url = "/home";
+    history.push(url);
+  };
 
   const launchSite = () => {
     bgEl.current.classList.add("active");
@@ -19,6 +27,9 @@ export default function WelcomeAnim() {
     setTimeout(() => {
       eyeEl.current.classList.add("active");
       circleEl.current.classList.add("active");
+      setTimeout(() => {
+        redirectHome();
+      }, 500);
     }, 2000);
   };
 
