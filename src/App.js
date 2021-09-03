@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import WelcomeAnim from "./Components/WelcomeAnim/WelcomeAnim";
-import MainMenu from "./Components/MainMenu/MainMenu";
+import WelcomeAnim from "./Pages/WelcomeAnim/WelcomeAnim";
+import MainMenu from "./Pages/MainMenu/MainMenu";
 
 function App() {
   return (

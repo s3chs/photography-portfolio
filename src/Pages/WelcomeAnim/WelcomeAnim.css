@@ -55,7 +55,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 0vw;
-  height: 0.2vh;
+  height: 0.3vh;
   background-color: black;
 }
 
@@ -69,7 +69,7 @@
   }
   40% {
     width: 100vw;
-    height: 0.2vh;
+    height: 0.3vh;
   }
   100% {
     width: 100vw;
