@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 
 .main-menu-container {
+  position: relative;
   background-color: black;
   width: 100vw;
   height: 100vh;
@@ -12,12 +13,14 @@
 }
 
 .nav-container {
+  overflow: hidden;
+  position: relative;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100vw;
-  height: 20vh;
+  height: 25vh;
 }
 
 .nav-txt {
@@ -29,6 +32,11 @@
   color: white;
   font-family: "Quicksand", sans-serif;
   transition: all 0.5s ease-in-out;
+  z-index: 10;
+}
+
+.nav-txt.active {
+  opacity: 1;
 }
 
 .nav-container:nth-of-type(1) .nav-txt {
@@ -44,6 +52,20 @@
   transition-delay: 0.8s;
 }
 
-.nav-txt.active {
+.hover-bg {
+  display: none;
+  position: absolute;
+  bottom: -100%;
+  z-index: 0;
+  width: 100vw;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.hover-bg.active {
+  display: block;
+}
+
+.nav-container:hover .hover-bg {
   opacity: 1;
 }
