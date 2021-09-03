@@ -21,6 +21,13 @@
   transition: all 0.38s ease-in-out;
 }
 
+.enter.active {
+  opacity: 0 !important;
+  top: 35%;
+  left: 49%;
+  transform: translate(-49%, -35%);
+}
+
 .enter-mirror {
   font-size: 1.3em;
   opacity: 0;
@@ -35,12 +42,20 @@
   transition: all 0.38s ease-in-out;
 }
 
+.enter-mirror.active {
+  opacity: 0 !important;
+  top: 35%;
+  left: 51%;
+  transform: translate(-51%, -35%);
+}
+
 .line {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 0.3vh;
+  width: 0vw;
+  height: 0.2vh;
   background-color: black;
 }
 
@@ -54,7 +69,7 @@
   }
   40% {
     width: 100vw;
-    height: 0.3vh;
+    height: 0.2vh;
   }
   100% {
     width: 100vw;
@@ -63,6 +78,7 @@
 }
 
 .eye {
+  border: 5px solid black;
   cursor: pointer;
   height: 150px;
   width: 150px;
@@ -70,8 +86,14 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
-  border-radius: 75% 0%;
+  border-radius: 75% 1%;
   background-color: white;
+  opacity: 1;
+  transition: all 0.3s linear;
+}
+
+.eye.active {
+  opacity: 0;
 }
 
 .circle {
@@ -86,8 +108,12 @@
   background-color: #ccdbfd;
   transition: all 0.5s ease-in-out;
   border: 13px solid #abc4ff;
-
   z-index: 1;
+}
+
+.circle.active {
+  opacity: 0;
+  transition: all 0.3s linear;
 }
 
 .circle::after {
