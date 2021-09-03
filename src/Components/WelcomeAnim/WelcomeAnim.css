@@ -45,18 +45,31 @@
   background-color: black;
 } */
 
+.eye {
+  cursor: pointer;
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-radius: 75% 0%;
+  background-color: white;
+}
+
 .circle {
   cursor: pointer;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
-  background-color: #bee1e6;
+  background-color: #ccdbfd;
   transition: all 0.5s ease-in-out;
-  border: 15px solid white;
+  border: 13px solid #abc4ff;
+
   z-index: 1;
 }
 
@@ -74,7 +87,23 @@
   transition: all 0.4s ease-in-out;
 }
 
-.circle:hover::after {
+.eye:hover ~ .circle::after {
+  width: 25px;
+  height: 25px;
+}
+
+.eye:hover ~ .enter {
+  opacity: 1;
+  top: 36%;
+  transform: translate(-50%, -36%);
+}
+.eye:hover ~ .enter-mirror {
+  opacity: 1;
+  top: 64%;
+  transform: translate(-50%, -64%) rotate(180deg);
+}
+
+.circle:hover::after  {
   width: 25px;
   height: 25px;
 }
@@ -89,3 +118,5 @@
   top: 64%;
   transform: translate(-50%, -64%) rotate(180deg);
 }
+
+
