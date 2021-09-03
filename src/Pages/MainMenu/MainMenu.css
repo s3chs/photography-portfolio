@@ -55,7 +55,6 @@
 .hover-bg {
   display: block;
   position: absolute;
-  top: 0%;
   z-index: 0;
   width: 100vw;
   opacity: 0;
