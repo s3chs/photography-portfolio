@@ -53,19 +53,19 @@
 }
 
 .hover-bg {
-  display: none;
+  display: block;
   position: absolute;
-  bottom: -100%;
+  top: 0%;
   z-index: 0;
   width: 100vw;
   opacity: 0;
-  transition: opacity 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
 .hover-bg.active {
   display: block;
 }
 
-.nav-container:hover .hover-bg {
+.nav-container:hover .hover-bg.active {
   opacity: 1;
 }

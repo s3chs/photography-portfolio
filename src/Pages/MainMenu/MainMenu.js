@@ -18,7 +18,7 @@ export default function MainMenu() {
       fourthEl.current?.classList.add("active");
 
       setTimeout(() => {
-        imgs.current.forEach(el => el.classList.add("active"))
+        imgs.current.forEach((el) => el.classList.add("active"));
       }, 1300);
     }, 300);
 
@@ -29,7 +29,6 @@ export default function MainMenu() {
     if (el && !imgs.current.includes(el)) {
       imgs.current.push(el);
     }
-    console.log(imgs);
   };
 
   return (
