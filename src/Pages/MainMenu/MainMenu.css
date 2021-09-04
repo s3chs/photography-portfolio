@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 
+a:-webkit-any-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .main-menu-container {
   position: relative;
   background-color: black;
