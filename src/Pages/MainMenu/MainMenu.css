@@ -3,6 +3,8 @@
 a:-webkit-any-link {
   text-decoration: none;
   color: inherit;
+  width: 100vw;
+  height: 20vh;
 }
 
 .main-menu-container {
