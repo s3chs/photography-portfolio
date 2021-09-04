@@ -13,9 +13,18 @@ export default function China() {
       .getAll(id)
       .then((apiRes) => {
         console.log(apiRes);
-        // setPictures(apiRes.data);
+        setPictures(apiRes.data);
       })
-      .catch((apiErr) => console.log(apiErr));
+      .catch((apiErr) => console.log(apiErr)
+      );
+
+    // fetch(`http://localhost:8080/pictures/${id}`)
+    //   .then((response) => {
+    //     response.json();
+    //   })
+    //   .then((data) => {
+    //     console.log(data);
+    //   });
 
     return () => {};
   }, []);

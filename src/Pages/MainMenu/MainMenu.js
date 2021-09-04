@@ -12,6 +12,7 @@ export default function MainMenu() {
 
   useEffect(() => {
     addRef();
+
     setTimeout(() => {
       firstEl.current?.classList.add("active");
       secondEl.current?.classList.add("active");
