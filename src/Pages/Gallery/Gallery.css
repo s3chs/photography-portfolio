@@ -1,0 +1,29 @@
+.gallery-container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: black;
+}
+
+.title-container {
+  width: 100vw;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  text-align: center;
+  color: white;
+  font-size: 3em;
+}
+
+.pic-container {
+  display: grid;
+  width: 100vw;
+  min-height: 50vh;
+}
+
+.pic {
+  max-height: 20vh;
+}

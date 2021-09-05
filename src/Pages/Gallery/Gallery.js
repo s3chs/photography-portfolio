@@ -6,28 +6,31 @@ import { useEffect, useState } from "react";
 // import axios from "axios";
 
 export default function China() {
-  // const [pictures, setPictures] = useState([]);
+  const [pictures, setPictures] = useState([]);
   var { id } = useParams();
-  
-  console.log(id)
-
-  // const getPictures = () => {
-  //   axios.get(`http://localhost:8080/pictures/${id}`).then((apiRes) => {
-  //     setPictures(apiRes.data);
-  //   });
-  // };
 
   useEffect(() => {
     apiHandler
       .getAll(id)
       .then((apiRes) => {
-        console.log(apiRes);
-        // setPictures(apiRes.data);
+        setPictures(apiRes.data);
       })
       .catch((apiErr) => console.log(apiErr));
-    // getPictures();
+
     return () => {};
   }, []);
 
-  return <div>{id}</div>;
+  return (
+    <div className="gallery-container">
+      <div className="title-container">
+        <p className="title">{id}</p>
+      </div>
+      <div className="pic-container">
+        {pictures &&
+          pictures.map((el, index) => (
+            <img className="pic" key={index} src={el.picture} alt="pic" />
+          ))}
+      </div>
+    </div>
+  );
 }
