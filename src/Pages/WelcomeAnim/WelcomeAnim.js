@@ -21,6 +21,7 @@ export default function WelcomeAnim() {
     bgEl.current.classList.add("active");
     enterEl.current.classList.add("active");
     enterMirrorEl.current.classList.add("active");
+    
     eyeEl.current.style.cursor = "default";
     circleEl.current.style.cursor = "default";
 

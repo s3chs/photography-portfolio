@@ -4,7 +4,6 @@ import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function MainMenu() {
-
   const imgs = useRef([]);
   const txts = useRef([]);
 
