@@ -5,6 +5,7 @@ body {
 }
 
 .gallery-container {
+  overflow: hidden;
   position: relative;
   width: 100vw;
   min-height: 100vh;
@@ -73,6 +74,9 @@ body {
 }
 
 .img-slider {
-  max-width: 90vw;
-  max-height: 90vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 80vh;
 }

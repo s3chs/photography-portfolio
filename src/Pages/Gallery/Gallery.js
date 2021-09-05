@@ -5,31 +5,31 @@ import apiHandler from "../../Api/apiHandler";
 import { useEffect, useState } from "react";
 
 export default function China() {
+  var { id } = useParams();
   const [pictures, setPictures] = useState([]);
   const [slider, setSlider] = useState({
     activateSlider: false,
-    index: 0,
+    index: null,
     inProgress: false,
   });
-  var { id } = useParams();
 
   const activateSlider = (el, index) => {
     var newState = { ...slider };
-    newState.slider = !newState.activateSlider;
+    newState.activateSlider = !slider.activateSlider;
     newState.index = index;
     setSlider(newState);
-
-    console.log(pictures[slider.index].picture);
+    console.log(slider);
   };
 
   useEffect(() => {
+    activateSlider();
     apiHandler
       .getAll(id)
       .then((apiRes) => {
         setPictures(apiRes.data);
       })
       .catch((apiErr) => console.log(apiErr));
-
+    // console.log(pictures[slider.index].picture);
     return () => {};
   }, []);
 
@@ -49,12 +49,12 @@ export default function China() {
               alt="pic"
             />
           ))}
-        {!slider.activateSlider && (
+        {slider.index != null && !slider.activateSlider && (
           <div className="slider-container">
             <div className="slider">
               <img
                 className="img-slider"
-                src={pictures[slider.index]}
+                src={pictures[slider.index].picture}
                 alt=""
               />
             </div>
