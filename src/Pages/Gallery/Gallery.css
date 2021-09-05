@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+
+body {
+  background-color: black;
+}
+
 .gallery-container {
   width: 100vw;
   min-height: 100vh;
@@ -13,17 +19,23 @@
 }
 
 .title {
+  cursor: default;
   text-align: center;
   color: white;
   font-size: 3em;
+  font-family: "Quicksand", sans-serif;
 }
 
 .pic-container {
-  display: grid;
-  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   min-height: 50vh;
 }
 
 .pic {
-  max-height: 20vh;
+  cursor: pointer;
+  max-height: 25vh;
+  margin: 1em;
 }
