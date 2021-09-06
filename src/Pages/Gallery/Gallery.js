@@ -8,28 +8,37 @@ export default function China() {
   var { id } = useParams();
 
   const [pictures, setPictures] = useState([]);
+  const [activateSlider, setActivateSlider] = useState(false);
   const [slider, setSlider] = useState({
-    activateSlider: false,
     index: null,
     inProgress: false,
   });
 
-  const activateSlider = (el, index) => {
+  const sliderSwitch = (el, index) => {
+    setActivateSlider(!activateSlider);
     var newState = { ...slider };
-    newState.activateSlider = !slider.activateSlider;
     newState.index = index;
     setSlider(newState);
   };
 
   useEffect(() => {
-    activateSlider();
     apiHandler
       .getAll(id)
       .then((apiRes) => {
         setPictures(apiRes.data);
       })
       .catch((apiErr) => console.log(apiErr));
-  }, [pictures.length]);
+  }, []);
+
+  useEffect(() => {
+    console.log(
+      "le state du slider",
+      activateSlider,
+      "le state de l'index",
+      slider
+    );
+    return () => {};
+  }, [activateSlider, slider.index]);
 
   const prevslide = () => {
     if (slider.index !== 0) {
@@ -56,14 +65,14 @@ export default function China() {
         {pictures &&
           pictures.map((el, index) => (
             <img
-              onClick={() => activateSlider(el, index)}
+              onClick={() => sliderSwitch(el, index)}
               className="pic"
               key={index}
               src={el.picture}
               alt="pic"
             />
           ))}
-        {slider.index != null && !slider.activateSlider && (
+        {slider.index != null && activateSlider && (
           <div className="slider-container">
             <div className="slider">
               <img
