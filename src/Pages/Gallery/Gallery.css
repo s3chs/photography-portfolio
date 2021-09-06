@@ -68,12 +68,13 @@ body {
   height: 90vh;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .img-slider {
   max-height: 85vh;
   max-width: 70vw;
+  
 }
 
 .prev {

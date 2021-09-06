@@ -6,6 +6,7 @@ import apiHandler from "../../Api/apiHandler";
 
 export default function China() {
   var { id } = useParams();
+
   const [pictures, setPictures] = useState([]);
   const [slider, setSlider] = useState({
     activateSlider: false,
@@ -28,11 +29,23 @@ export default function China() {
         setPictures(apiRes.data);
       })
       .catch((apiErr) => console.log(apiErr));
-    return () => {};
-  }, []);
+  }, [pictures.length]);
 
-  const prevslide = () => {};
-  const nextslide = () => {};
+  const prevslide = () => {
+    if (slider.index !== 0) {
+      setSlider({ index: slider.index - 1 });
+    } else if (slider.index === 0) {
+      setSlider({ index: pictures.length - 1 });
+    }
+  };
+
+  const nextslide = () => {
+    if (slider.index !== pictures.length - 1) {
+      setSlider({ index: slider.index + 1 });
+    } else if (slider.index === pictures.length - 1) {
+      setSlider({ index: 0 });
+    }
+  };
 
   return (
     <div className="gallery-container">
