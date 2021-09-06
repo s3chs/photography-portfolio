@@ -55,28 +55,35 @@ body {
 }
 
 .slider-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90vw;
-  height: 90vh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
 }
 
 .slider {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 90vw;
   height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .img-slider {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-height: 80vh;
+  max-height: 85vh;
+  max-width: 70vw;
+}
+
+.prev {
+  transform: rotate(90deg);
+}
+.next {
+  transform: rotate(-90deg);
+}
+
+.icon {
+  cursor: pointer;
+  height: 3vw;
 }

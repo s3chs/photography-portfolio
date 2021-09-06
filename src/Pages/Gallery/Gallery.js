@@ -1,8 +1,8 @@
 import React from "react";
 import "./Gallery.css";
 import { useParams } from "react-router";
-import apiHandler from "../../Api/apiHandler";
 import { useEffect, useState } from "react";
+import apiHandler from "../../Api/apiHandler";
 
 export default function China() {
   var { id } = useParams();
@@ -18,7 +18,6 @@ export default function China() {
     newState.activateSlider = !slider.activateSlider;
     newState.index = index;
     setSlider(newState);
-    console.log(slider);
   };
 
   useEffect(() => {
@@ -29,9 +28,11 @@ export default function China() {
         setPictures(apiRes.data);
       })
       .catch((apiErr) => console.log(apiErr));
-    // console.log(pictures[slider.index].picture);
     return () => {};
   }, []);
+
+  const prevslide = () => {};
+  const nextslide = () => {};
 
   return (
     <div className="gallery-container">
@@ -53,8 +54,20 @@ export default function China() {
           <div className="slider-container">
             <div className="slider">
               <img
+                onClick={prevslide}
+                className="prev icon"
+                src="https://res.cloudinary.com/dncemocxu/image/upload/v1630917891/photography%20portfolio/PngItem_2402231_zrk8ye.png"
+                alt=""
+              />
+              <img
                 className="img-slider"
                 src={pictures[slider.index].picture}
+                alt=""
+              />
+              <img
+                onClick={nextslide}
+                className="next icon"
+                src="https://res.cloudinary.com/dncemocxu/image/upload/v1630917891/photography%20portfolio/PngItem_2402231_zrk8ye.png"
                 alt=""
               />
             </div>
