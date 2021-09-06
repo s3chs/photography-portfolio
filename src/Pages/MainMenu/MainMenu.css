@@ -33,7 +33,7 @@ a {
 
 .nav-txt {
   opacity: 0;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.2em;
   cursor: pointer;
   text-align: center;
   font-size: 50px;
@@ -41,10 +41,7 @@ a {
   font-family: "Quicksand", sans-serif;
   transition: all 0.5s ease-in-out;
   z-index: 10;
-}
-
-.nav-txt.active {
-  opacity: 1;
+  font-weight: 700;
 }
 
 .nav-container:nth-of-type(1) .nav-txt {
@@ -58,6 +55,10 @@ a {
 }
 .nav-container:nth-of-type(4) .nav-txt {
   transition-delay: 0.8s;
+}
+
+.nav-txt.active {
+  opacity: 1;
 }
 
 .hover-bg {
@@ -75,4 +76,15 @@ a {
 
 .nav-container:hover .hover-bg.active {
   opacity: 1;
+}
+
+.nav-container:hover .nav-txt.active.delay-out {
+  transition-delay: 0s;
+  color: black;
+  letter-spacing: 0.3em;
+}
+
+.nav-txt.active.delay-out {
+  transition: all 0.4s ease-in-out;
+  transition-delay: 0s;
 }

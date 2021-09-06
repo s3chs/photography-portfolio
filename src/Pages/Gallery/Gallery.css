@@ -16,6 +16,11 @@ body {
   opacity: 1;
 }
 
+.gallery-slider {
+  width: 100vw;
+  height: 100vh;
+}
+
 .fade {
   opacity: 0.5;
 }
@@ -48,13 +53,23 @@ body {
   padding-bottom: 3em;
 }
 
+.hide {
+  display: none;
+}
+
 .pic {
   cursor: pointer;
   max-height: 25vh;
   margin: 1.3em;
+  transition: transform 0.2s linear;
+}
+
+.pic:hover {
+  transform: scale(1.07);
 }
 
 .slider-container {
+  position: relative;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -74,7 +89,6 @@ body {
 .img-slider {
   max-height: 85vh;
   max-width: 70vw;
-  
 }
 
 .prev {
@@ -86,5 +100,11 @@ body {
 
 .icon {
   cursor: pointer;
-  height: 3vw;
+  height: 5vh;
+}
+
+.close {
+  position: absolute;
+  top: 5%;
+  right: 5%;
 }

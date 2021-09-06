@@ -16,6 +16,7 @@ export default function MainMenu() {
 
       setTimeout(() => {
         imgs.current.forEach((el) => el.classList.add("active"));
+        txts.current.forEach((el) => el.classList.add("delay-out"));
       }, 1000);
     }, 300);
 
@@ -41,7 +42,7 @@ export default function MainMenu() {
           <img
             ref={addImg}
             className="hover-bg"
-            src="https://res.cloudinary.com/dncemocxu/image/upload/v1630680872/photography%20portfolio/24140004_s9o3ur.jpg"
+            src="https://res.cloudinary.com/dncemocxu/image/upload/v1630849383/photography%20portfolio/bali/24160016_ktqd0u.jpg"
             alt=""
           />
         </Link>
@@ -55,7 +56,7 @@ export default function MainMenu() {
           <img
             ref={addImg}
             className="hover-bg"
-            src="https://res.cloudinary.com/dncemocxu/image/upload/v1630680877/photography%20portfolio/24140031_t2idyz.jpg"
+            src="https://res.cloudinary.com/dncemocxu/image/upload/v1630849730/photography%20portfolio/china/24140031_sklief.jpg"
             alt=""
           />
         </Link>
@@ -68,7 +69,7 @@ export default function MainMenu() {
           <img
             ref={addImg}
             className="hover-bg"
-            src="https://res.cloudinary.com/dncemocxu/image/upload/v1630681146/photography%20portfolio/30680019_zrzwuq.jpg"
+            src="https://res.cloudinary.com/dncemocxu/image/upload/v1630849881/photography%20portfolio/random/69250014_zgsstw.jpg"
             alt=""
           />
         </Link>
@@ -81,7 +82,7 @@ export default function MainMenu() {
           <img
             ref={addImg}
             className="hover-bg"
-            src="https://res.cloudinary.com/dncemocxu/image/upload/v1630681709/photography%20portfolio/25800018_ngt0jo.jpg"
+            src="https://res.cloudinary.com/dncemocxu/image/upload/v1630849687/photography%20portfolio/china/24130014_kqg502.jpg"
             alt=""
           />
         </Link>

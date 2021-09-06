@@ -14,6 +14,10 @@ export default function China() {
     inProgress: false,
   });
 
+  const sliderOut = () => {
+    setActivateSlider(!activateSlider);
+  };
+
   const sliderSwitch = (el, index) => {
     setActivateSlider(!activateSlider);
     var newState = { ...slider };
@@ -58,10 +62,12 @@ export default function China() {
 
   return (
     <div className="gallery-container">
-      <div className="title-container">
+      <div
+        className={!activateSlider ? "title-container" : "title-container hide"}
+      >
         <p className="title">{id}</p>
       </div>
-      <div className="pic-container">
+      <div className={!activateSlider ? "pic-container" : "pic-container hide"}>
         {pictures &&
           pictures.map((el, index) => (
             <img
@@ -72,30 +78,36 @@ export default function China() {
               alt="pic"
             />
           ))}
-        {slider.index != null && activateSlider && (
-          <div className="slider-container">
-            <div className="slider">
-              <img
-                onClick={prevslide}
-                className="prev icon"
-                src="https://res.cloudinary.com/dncemocxu/image/upload/v1630917891/photography%20portfolio/PngItem_2402231_zrk8ye.png"
-                alt=""
-              />
-              <img
-                className="img-slider"
-                src={pictures[slider.index].picture}
-                alt=""
-              />
-              <img
-                onClick={nextslide}
-                className="next icon"
-                src="https://res.cloudinary.com/dncemocxu/image/upload/v1630917891/photography%20portfolio/PngItem_2402231_zrk8ye.png"
-                alt=""
-              />
-            </div>
-          </div>
-        )}
       </div>
+      {slider.index != null && activateSlider && (
+        <div className="slider-container">
+          <img
+            onClick={sliderOut}
+            className="close icon"
+            src="https://res.cloudinary.com/dncemocxu/image/upload/v1630935047/photography%20portfolio/close-button-png-30221_hfhvac.png"
+            alt="close-btn"
+          />
+          <div className="slider">
+            <img
+              onClick={prevslide}
+              className="prev icon"
+              src="https://res.cloudinary.com/dncemocxu/image/upload/v1630917891/photography%20portfolio/PngItem_2402231_zrk8ye.png"
+              alt="prev-btn"
+            />
+            <img
+              className="img-slider"
+              src={pictures[slider.index].picture}
+              alt="slider"
+            />
+            <img
+              onClick={nextslide}
+              className="next icon"
+              src="https://res.cloudinary.com/dncemocxu/image/upload/v1630917891/photography%20portfolio/PngItem_2402231_zrk8ye.png"
+              alt="next-btn"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
