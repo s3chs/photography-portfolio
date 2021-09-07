@@ -10,6 +10,7 @@ export default function China() {
   const title = useRef();
   const backBtn = useRef();
   const container = useRef();
+  const mainContainer = useRef();
   const sliderRef = useRef();
   const redirect = useHistory();
 
@@ -21,18 +22,32 @@ export default function China() {
   });
 
   const sliderOut = () => {
-    setActivateSlider(!activateSlider);
+    sliderRef.current.classList.add("fade");
+    mainContainer.current.classList.add("fade");
+
+    setTimeout(() => {
+      setActivateSlider(!activateSlider);
+      mainContainer.current.classList.remove("fade");
+      title.current.classList.remove("fade");
+      backBtn.current.classList.remove("fade");
+    }, 300);
   };
 
   const sliderSwitch = (el, index) => {
-    setActivateSlider(!activateSlider);
-    var newState = { ...slider };
-    newState.index = index;
-    setSlider(newState);
+    title.current.classList.add("fade");
+    backBtn.current.classList.add("fade");
+    container.current.classList.add("fade");
 
     setTimeout(() => {
-      sliderRef.current.classList.remove("fade");
-    }, 200);
+      setActivateSlider(!activateSlider);
+      var newState = { ...slider };
+      newState.index = index;
+      setSlider(newState);
+
+      setTimeout(() => {
+        sliderRef.current.classList.remove("fade");
+      }, 100);
+    }, 300);
   };
 
   useEffect(() => {
@@ -44,21 +59,23 @@ export default function China() {
       .catch((apiErr) => console.log(apiErr));
     container.current.classList.add("fade");
     displayPage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    console.log(activateSlider);
     return () => {};
   }, [activateSlider, slider]);
 
   const prevslide = () => {
     if (slider.index !== 0) {
       setSlider({ index: slider.index, inProgress: true });
+
       setTimeout(() => {
         setSlider({ index: slider.index - 1, inProgress: false });
       }, 300);
     } else if (slider.index === 0) {
       setSlider({ index: slider.index, inProgress: true });
+
       setTimeout(() => {
         setSlider({ index: pictures.length - 1, inProgress: false });
       }, 300);
@@ -68,11 +85,13 @@ export default function China() {
   const nextslide = () => {
     if (slider.index !== pictures.length - 1) {
       setSlider({ index: slider.index, inProgress: true });
+
       setTimeout(() => {
         setSlider({ index: slider.index + 1, inProgress: false });
       }, 300);
     } else if (slider.index === pictures.length - 1) {
       setSlider({ index: slider.index, inProgress: true });
+
       setTimeout(() => {
         setSlider({ index: 0, inProgress: false });
       }, 300);
@@ -83,6 +102,7 @@ export default function China() {
     setTimeout(() => {
       title.current.classList.remove("fade");
       backBtn.current.classList.remove("fade");
+
       setTimeout(() => {
         container.current.classList.remove("fade");
       }, 300);
@@ -93,6 +113,7 @@ export default function China() {
     title.current.classList.add("fade");
     backBtn.current.classList.add("fade");
     container.current.classList.add("fade");
+
     setTimeout(() => {
       let url = "/home";
       redirect.push(url);
@@ -100,7 +121,7 @@ export default function China() {
   };
 
   return (
-    <div className="gallery-container">
+    <div ref={mainContainer} className="gallery-container">
       <div
         className={!activateSlider ? "title-container" : "title-container hide"}
       >

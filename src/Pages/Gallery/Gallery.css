@@ -13,7 +13,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .gallery-slider {
@@ -105,7 +105,7 @@ body {
   justify-content: center;
   background-color: black;
   opacity: 1;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
 }
 
 .slider {

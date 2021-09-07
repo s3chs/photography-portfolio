@@ -1,7 +1,7 @@
 import React from "react";
 import "./MainMenu.css";
 import { useRef, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import {useHistory } from "react-router-dom";
 
 export default function MainMenu() {
   const imgs = useRef([]);
