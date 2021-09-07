@@ -86,7 +86,7 @@ export default function MainMenu() {
         <img
           ref={addImg}
           className="hover-bg"
-          src="https://res.cloudinary.com/dncemocxu/image/upload/v1630849687/photography%20portfolio/china/24130014_kqg502.jpg"
+          src="https://res.cloudinary.com/dncemocxu/image/upload/v1630849015/photography%20portfolio/friends/69250012_vauiwx.jpg"
           alt=""
         />
 

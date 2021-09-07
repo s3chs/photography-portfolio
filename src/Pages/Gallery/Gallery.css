@@ -88,7 +88,8 @@ body {
 .pic {
   cursor: pointer;
   max-height: 25vh;
-  margin: 1.3em;
+  max-width: 30vw;
+  margin: 0.9em;
   transition: transform 0.2s linear;
 }
 
