@@ -71,7 +71,7 @@ body {
 
 .pic-container {
   padding-top: 20vh;
-  width: 75vw;
+  width: 80vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,8 +87,8 @@ body {
 
 .pic {
   cursor: pointer;
-  max-height: 27vh;
-  max-width: 34vw;
+  max-height: 25vh;
+  max-width: 30vw;
   margin: 0.9em;
   transition: transform 0.2s linear;
 }
