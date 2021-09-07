@@ -35,28 +35,34 @@ export default function China() {
   }, []);
 
   useEffect(() => {
-    console.log(
-      "le state du slider",
-      activateSlider,
-      "le state de l'index",
-      slider
-    );
     return () => {};
-  }, [activateSlider, slider.index]);
+  }, [activateSlider, slider]);
 
   const prevslide = () => {
     if (slider.index !== 0) {
-      setSlider({ index: slider.index - 1 });
+      setSlider({ index: slider.index, inProgress: true });
+      setTimeout(() => {
+        setSlider({ index: slider.index - 1, inProgress: false });
+      }, 300);
     } else if (slider.index === 0) {
-      setSlider({ index: pictures.length - 1 });
+      setSlider({ index: slider.index, inProgress: true });
+      setTimeout(() => {
+        setSlider({ index: pictures.length - 1, inProgress: false });
+      }, 300);
     }
   };
 
   const nextslide = () => {
     if (slider.index !== pictures.length - 1) {
-      setSlider({ index: slider.index + 1 });
+      setSlider({ index: slider.index, inProgress: true });
+      setTimeout(() => {
+        setSlider({ index: slider.index + 1, inProgress: false });
+      }, 300);
     } else if (slider.index === pictures.length - 1) {
-      setSlider({ index: 0 });
+      setSlider({ index: slider.index, inProgress: true });
+      setTimeout(() => {
+        setSlider({ index: 0, inProgress: false });
+      }, 300);
     }
   };
 
@@ -95,7 +101,7 @@ export default function China() {
               alt="prev-btn"
             />
             <img
-              className="img-slider"
+              className={!slider.inProgress ? "img-slider" : "img-slider fade"}
               src={pictures[slider.index].picture}
               alt="slider"
             />

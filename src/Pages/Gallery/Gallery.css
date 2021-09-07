@@ -21,10 +21,6 @@ body {
   height: 100vh;
 }
 
-.fade {
-  opacity: 0.5;
-}
-
 .title-container {
   width: 100vw;
   height: 20vh;
@@ -65,7 +61,7 @@ body {
 }
 
 .pic:hover {
-  transform: scale(1.07);
+  transform: scale(1.05);
 }
 
 .slider-container {
@@ -89,6 +85,12 @@ body {
 .img-slider {
   max-height: 85vh;
   max-width: 70vw;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade {
+  opacity: 0;
 }
 
 .prev {
