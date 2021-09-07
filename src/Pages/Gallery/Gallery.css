@@ -22,24 +22,55 @@ body {
 }
 
 .title-container {
-  width: 100vw;
+  position: absolute;
   height: 20vh;
+  top: 0%;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .title {
-  padding-top: 1em;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.1em;
   cursor: default;
   text-align: center;
   color: white;
   font-size: 3em;
   font-family: "Quicksand", sans-serif;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.back {
+  position: relative;
+  font-family: "Quicksand", sans-serif;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  color: white;
+  font-size: 2em;
+  position: absolute;
+  top: 15%;
+  right: 3%;
+  transition: all 0.3s ease-in-out;
+}
+
+.back::after {
+  position: absolute;
+  content: "";
+  bottom: 3%;
+  left: 15%;
+  background-color: white;
+  width: 0%;
+  height: 2px;
+  transition: all 0.2s ease-in-out;
+}
+
+.back:hover::after {
+  width: 85%;
 }
 
 .pic-container {
+  padding-top: 20vh;
   width: 80vw;
   display: flex;
   justify-content: center;
@@ -47,6 +78,7 @@ body {
   flex-wrap: wrap;
   min-height: 50vh;
   padding-bottom: 3em;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .hide {
@@ -72,6 +104,8 @@ body {
   align-items: center;
   justify-content: center;
   background-color: black;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .slider {

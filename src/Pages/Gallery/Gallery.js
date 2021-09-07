@@ -1,11 +1,17 @@
 import React from "react";
 import "./Gallery.css";
 import { useParams } from "react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import apiHandler from "../../Api/apiHandler";
+import { useHistory } from "react-router-dom";
 
 export default function China() {
   var { id } = useParams();
+  const title = useRef();
+  const backBtn = useRef();
+  const container = useRef();
+  const sliderRef = useRef();
+  const redirect = useHistory();
 
   const [pictures, setPictures] = useState([]);
   const [activateSlider, setActivateSlider] = useState(false);
@@ -23,6 +29,10 @@ export default function China() {
     var newState = { ...slider };
     newState.index = index;
     setSlider(newState);
+
+    setTimeout(() => {
+      sliderRef.current.classList.remove("fade");
+    }, 200);
   };
 
   useEffect(() => {
@@ -32,9 +42,12 @@ export default function China() {
         setPictures(apiRes.data);
       })
       .catch((apiErr) => console.log(apiErr));
+    container.current.classList.add("fade");
+    displayPage();
   }, []);
 
   useEffect(() => {
+    console.log(activateSlider);
     return () => {};
   }, [activateSlider, slider]);
 
@@ -66,14 +79,42 @@ export default function China() {
     }
   };
 
+  const displayPage = () => {
+    setTimeout(() => {
+      title.current.classList.remove("fade");
+      backBtn.current.classList.remove("fade");
+      setTimeout(() => {
+        container.current.classList.remove("fade");
+      }, 300);
+    }, 500);
+  };
+
+  const goBack = () => {
+    title.current.classList.add("fade");
+    backBtn.current.classList.add("fade");
+    container.current.classList.add("fade");
+    setTimeout(() => {
+      let url = "/home";
+      redirect.push(url);
+    }, 500);
+  };
+
   return (
     <div className="gallery-container">
       <div
         className={!activateSlider ? "title-container" : "title-container hide"}
       >
-        <p className="title">{id}</p>
+        <p ref={title} className="title fade">
+          {id}
+        </p>
+        <p onClick={goBack} ref={backBtn} className="back fade">
+          go back
+        </p>
       </div>
-      <div className={!activateSlider ? "pic-container" : "pic-container hide"}>
+      <div
+        ref={container}
+        className={!activateSlider ? "pic-container" : "pic-container hide"}
+      >
         {pictures &&
           pictures.map((el, index) => (
             <img
@@ -86,7 +127,7 @@ export default function China() {
           ))}
       </div>
       {slider.index != null && activateSlider && (
-        <div className="slider-container">
+        <div ref={sliderRef} className="slider-container fade">
           <img
             onClick={sliderOut}
             className="close icon"
