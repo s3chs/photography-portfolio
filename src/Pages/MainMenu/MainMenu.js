@@ -1,7 +1,7 @@
 import React from "react";
 import "./MainMenu.css";
 import { useRef, useEffect } from "react";
-import {useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function MainMenu() {
   const imgs = useRef([]);
@@ -12,14 +12,12 @@ export default function MainMenu() {
     addImg();
     addTxt();
 
-    setTimeout(() => {
-      txts.current.forEach((el) => el.classList.add("active"));
+    txts.current.forEach((el) => el.classList.add("active"));
 
-      setTimeout(() => {
-        imgs.current.forEach((el) => el.classList.add("active"));
-        txts.current.forEach((el) => el.classList.add("delay-out"));
-      }, 1000);
-    }, 300);
+    setTimeout(() => {
+      imgs.current.forEach((el) => el.classList.add("active"));
+      txts.current.forEach((el) => el.classList.add("delay-out"));
+    }, 1000);
 
     return () => {};
   }, []);

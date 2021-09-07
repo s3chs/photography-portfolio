@@ -111,3 +111,15 @@ a {
 .out {
   opacity: 0 !important;
 }
+
+@media (max-width: 768px) {
+  .nav-txt {
+    font-size: 2.5em;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav-txt {
+    font-size: 2em;
+  }
+}

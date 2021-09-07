@@ -144,3 +144,53 @@ body {
   top: 5%;
   right: 5%;
 }
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5em;
+  }
+
+  .back {
+    font-size: 1.5em;
+  }
+  .pic-container {
+    width: 85vw;
+  }
+  .pic {
+    max-height: 20vh;
+  }
+
+  .icon {
+    height: 3vh;
+  }
+
+  .slider {
+    width: 95vw;
+    height: 95vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 2em;
+  }
+
+  .back {
+    font-size: 1.2em;
+  }
+  .pic-container {
+    width: 90vw;
+  }
+  .pic {
+    max-width: 40vw;
+    margin: 0.5em;
+  }
+  .icon {
+    height: 2.5vh;
+  }
+
+  .slider {
+    width: 95vw;
+    height: 95vh;
+  }
+}

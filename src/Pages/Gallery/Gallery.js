@@ -34,6 +34,7 @@ export default function China() {
   };
 
   const sliderSwitch = (el, index) => {
+    
     title.current.classList.add("fade");
     backBtn.current.classList.add("fade");
     container.current.classList.add("fade");
